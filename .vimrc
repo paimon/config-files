@@ -13,8 +13,8 @@ set softtabstop=4
 "number of spaces added by >> command
 set shiftwidth=4
 
-"copy indent from previous string
-set autoindent
+"make necessary indents
+set smartindent
 
 "show line numbers
 set number
