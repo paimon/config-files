@@ -34,13 +34,15 @@ set wildmenu
 map <F2> :w<CR>
 
 "compile on F3
+map <F3> :silent make\|cw\|redraw!<CR>
 autocmd FileType cpp :set makeprg=g++\ -std=c++14\ %\ -o\ %:r
 autocmd FileType python :set makeprg=flake8\ %
-map <F3> :silent make\|cw\|redraw!<CR>
+autocmd FileType tex map <F3> :!pdflatex -halt-on-error %<CR>
 
 "run on F4
 autocmd FileType cpp map <F4> :!./%:r<CR>
 autocmd FileType python map <F4> :!python %<CR>
+autocmd FileType tex map <F4> :!open %:r.pdf<CR>
 
 "bash on F5
 map <F5> :sh<CR>
